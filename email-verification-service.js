@@ -65,8 +65,9 @@ const mappingEmailVerificationResponse = (body) => {
         default:
             console.log('Response VerboseOutput didn\'t match defaults: ', resp.VerboseOutput);
             result = 'Invalid';
+            errorCode = 'invalid';
     }
-    ;
+
 
     if (result === 'Valid') {
         response = {result: result};
@@ -78,7 +79,6 @@ const mappingEmailVerificationResponse = (body) => {
 
         body.Corrections ? response.corrections = body.Corrections : '';
     }
-
 
     return response;
 }
